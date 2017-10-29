@@ -1,17 +1,19 @@
-<h1>Articles</h1>
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Text</th>
-    <th colspan="2"></th>
-  </tr>
+<div id="title-container">
+  <a href="https://imgur.com/C4h08Hg"><img class="emma-pic" src="https://i.imgur.com/C4h08Hg.jpg" title="source: imgur.com" /></a>
+  <h1 class="title">Emma Bo Bemma</h1>
+  <h4 class='subtitle'>Inside the life of the best dog in the world</h4>
+</div>
 
+<div class="table">
+<button class="button"><%= link_to 'Write a New Post', new_article_path %></button>
+<table class="columns">
   <% @articles.each do |article| %>
     <tr>
       <td><%= article.title %></td>
       <td><%= article.text %></td>
       <td><%= link_to 'Show', article_path(article) %></td>
-      <td><%= link_to 'Destroy', article_path(article), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td><%= link_to 'Delete', article_path(article), method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
 </table>
+</div>
